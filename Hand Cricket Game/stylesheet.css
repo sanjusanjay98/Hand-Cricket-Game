@@ -1,0 +1,215 @@
+@import 'https://fonts.googleapis.com/css?family=Noto+Sans+JP';
+
+:root {
+    --primary-color: #a8e6cf;
+    --secondary-color: #dcedc1;
+    --accent-color: #ffd3b6;
+    --highlight-color: #ffaaa5;
+    --text-primary: #2d3436;
+    --text-secondary: #636e72;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --gradient-start: #dff9fb;
+    --gradient-end: #c7ecee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center-aligns content vertically */
+    padding: 20px;
+    line-height: 1.6;
+    text-align: center; /* Center-aligns text */
+}
+
+/* Glass Effect */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 var(--shadow-color);
+    padding: 20px;
+    margin: 10px;
+    text-align: center; /* Center-aligns text within the glass effect */
+}
+
+/* Game Title */
+#game_title {
+    text-align: center; /* Explicit center alignment */
+    margin-bottom: 20px;
+    padding: 20px 40px;
+}
+
+#game_title h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Player Name Section */
+#player_name_section {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.name-input input {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: inset 0 2px 4px var(--shadow-color);
+}
+
+/* Batting Status */
+.batting-status {
+    padding: 15px 30px;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Score and Choice Boards */
+.headlines {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+    text-align: center; /* Center-aligns content */
+}
+
+@media (min-width: 768px) {
+    .headlines {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+#score_board, #choice_board {
+    flex: 1;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 20px;
+}
+
+/* Number Grid */
+.number-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 300px;
+    margin: 15px auto;
+    text-align: center; /* Align numbers centrally */
+}
+
+/* Buttons */
+.but, .but1, .but2 {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 12px 24px;
+    margin: 5px;
+    background: var(--primary-color);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.but-yellow { background: var(--accent-color); }
+.but-blue { background: var(--secondary-color); }
+.but-restart { background: var(--highlight-color); }
+
+.but:hover, .but1:hover, .but2:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    filter: brightness(1.1);
+}
+
+/* Icon Adjustments */
+.icon {
+    font-size: 1.5rem; /* Medium size for icons */
+    width: 40px; /* Adjust width for graphical icons */
+    height: 40px; /* Adjust height for graphical icons */
+    text-align: center; /* Center-aligns icons */
+}
+
+/* Super Over Section */
+#super_over_section {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Match Result */
+#match_result {
+    text-align: center;
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+#result_message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#result_details {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .but, .but1, .but2 {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .number-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #game_title h1 {
+        font-size: 2rem;
+    }
+
+    .icon {
+        font-size: 1.2rem;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

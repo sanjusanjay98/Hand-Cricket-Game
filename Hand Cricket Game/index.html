@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Hand Cricket for Kids</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sanjay">
+    <link rel="stylesheet" type="text/css" href="static/css/stylesheet.css">
+</head>
+<body>
+    <!-- Game Title -->
+    <div id="game_title" class="glass-effect">
+        <h1>🏏 Hand Cricket 🏏</h1>
+    </div>
+
+    <!-- Player Name Section -->
+    <div id="player_name_section" class="glass-effect">
+        <h2>Welcome to Hand Cricket!</h2>
+        <div class="name-input">
+            <label for="player_name">Enter Your Name:</label><br>
+            <input type="text" id="player_name" placeholder="Your Name"><br>
+            <button type="button" onclick="submitPlayerName()" class="but but-blue">Start Game</button>
+            <div class="bot-info">
+                You'll be playing against: <span id="bot_name">Bot</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toss Section -->
+    <div class="toss glass-effect" style="display:none;" id="toss_section">
+        <span id="OddEven">
+            Welcome <span id="player_name_display"></span>! You're playing against <span id="bot_name_display"></span><br /><br />
+            TOSS<br /><br />
+            Choose:<br />
+            <button type="button" onclick="set_OE(0)" class="but but-yellow">Odd</button> or
+            <button type="button" onclick="set_OE(1)" class="but but-blue">Even</button>
+        </span>
+    </div>
+
+    <!-- Batting Indicator -->
+    <div id="batting_indicator" style="display:none;" class="batting-status glass-effect">
+        <span id="current_batting">Waiting for toss...</span>
+    </div>
+
+    <!-- Score Display -->
+    <div class="headlines">
+        <span id="score_board" class="glass-effect" style="display:none;">
+            <span id="player_name_score">Player</span> Runs: <span id="user_score">0</span><br />
+            <span id="bot_name_score">Bot</span> Runs: <span id="cpu_score">0</span>
+        </span>
+
+        <span id="choice_board" class="glass-effect" style="display:none;">
+            <span id="player_name_choice">Player</span>'s Choice: <span id="user_choice">-</span><br />
+            <span id="bot_name_choice">Bot</span>'s Choice: <span id="cpu_choice">-</span>
+        </span>
+    </div>
+
+    <!-- Number Selection -->
+    <div class="selector">
+        <span id="inp" class="glass-effect" style="display:none;">
+            Choose your number:<br />
+            <div class="number-grid">
+                <button type="button" onclick="set_inp(1)" class="but1">1</button>
+                <button type="button" onclick="set_inp(2)" class="but1">2</button>
+                <button type="button" onclick="set_inp(3)" class="but1">3</button>
+                <button type="button" onclick="set_inp(4)" class="but1">4</button>
+                <button type="button" onclick="set_inp(5)" class="but1">5</button>
+                <button type="button" onclick="set_inp(6)" class="but1">6</button>
+            </div>
+        </span>
+    </div>
+
+    <div id="super_over_section" class="glass-effect" style="display:none;">
+        <h2>🏆 Super Over! 🏆</h2>
+        <span id="super_over_score_board">
+            <span id="player_name_super">Player</span> Super Over Runs: <span id="super_over_user_score">0</span><br />
+            <span id="bot_name_super">Bot</span> Super Over Runs: <span id="super_over_cpu_score">0</span>
+        </span>
+        <br />
+        <div id="super_over_user_input" style="display:none;">
+            Choose your number for Super Over:<br />
+            <div class="number-grid">
+                <button type="button" onclick="playSuperOverUser(1)" class="but1">1</button>
+                <button type="button" onclick="playSuperOverUser(2)" class="but1">2</button>
+                <button type="button" onclick="playSuperOverUser(3)" class="but1">3</button>
+                <button type="button" onclick="playSuperOverUser(4)" class="but1">4</button>
+                <button type="button" onclick="playSuperOverUser(5)" class="but1">5</button>
+                <button type="button" onclick="playSuperOverUser(6)" class="but1">6</button>
+            </div>
+        </div>
+    </div>
+
+    <span id="ask_user_bat" class="glass-effect" style="display:none;">
+        <span id="player_name_toss">Player</span>, you won the toss! <br/>
+        Would you like to Bat or Bowl first?<br />
+        <button type="button" onclick="set_userBats(1)" class="but2">Bat 🏏</button>
+        <button type="button" onclick="set_userBats(0)" class="but2">Bowl 🎯</button>
+    </span>
+
+    <!-- Match Result -->
+    <div id="match_result" class="glass-effect" style="display:none;">
+        <div id="result_message"></div>
+        <div id="result_details"></div>
+    </div>
+
+    <!-- Restart Button -->
+    <div id="restart_section" style="display: none;">
+        <button onclick="restartMatch()" class="but but-restart">Play Again 🔄</button>
+    </div>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>
