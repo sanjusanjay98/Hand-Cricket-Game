@@ -1,7 +1,3 @@
-Of course\! Here is the full content of the README file for you to copy and paste.
-
------
-
 # 🏏 Hand Cricket Game
 
 A fun, browser-based implementation of the classic hand cricket game. Personalize your match by entering your name, challenge a computer bot, and chase down the target to win\!
